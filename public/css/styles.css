@@ -1,6 +1,312 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+/* Header section */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .siteName a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+header #tools a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+nav {
+  background-color: #444;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+/* Main */
+main {
+  padding: 2rem;
+}
+
+.welcome {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.welcome-image {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.welcome-ul {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin-top: -200px;
+  color: blue;
+  background-color: rgb(225, 255, 255, 0.644);
+}
+
+.welcome ul li {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.welcome button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.welcome button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .container{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.container-upgrades{
+  width: 50%;
+}
+
+.container-upgrades .upgrades {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-upgrades .upgrades h2 { 
+  font-size: 28px; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+} 
+
+.upgrades img { 
+  width: 100px; 
+  height: 100px;
+} 
+
+.upgrade-item p { 
+  font-size: 16px; 
+  color: #333; 
+  padding-right: 15px;
+} 
+
+.reviews {
+  width: 100%;
+} 
+
+.reviews h2 { 
+  font-size: 28px; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+} 
+
+.reviews ul { 
+  padding-right: 15px; 
+  text-align: left; 
+} 
+
+.reviews ul li { 
+  font-size: 16px; 
+  margin: 10px 0; 
+  color: #333; 
+} 
+
+/* Footer section */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+  }
+  
+  header .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header .account-link {
+    color: #fff;
+    font-size: 16px;
+  }
+
+  nav {
+    background-color: #444;
+    padding: 10px 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  nav ul li a:hover {
+    color: #ddd;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: white;
+  }
+
+  section.welcome {
+    padding: 40px 20px;
+    width: 50%;
+    display: block;
+    margin-left: 300px;
+    }
+
+  section.welcome h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .welcome-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    position: relative;
+
+  }
+
+  .welcome-ul {
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    margin-top: -200px;
+    color: blue;
+    background-color: rgba(255, 255, 255, 0.644);
+  
+  }
+
+  section.welcome ul li {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  section.welcome button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  section.welcome button:hover {
+    background-color: #0056b3;
+  }
+
+  .container { 
+    display: flex;
+  } 
+
+  .container-upgrades{
+    width: 50%;
+  }
+
+  .container-upgrades .upgrades {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+  
+  .upgrade-item img { 
+    width: 110px; 
+    height: 110px; 
+  } 
+
+  .upgrade-item p { 
+    font-size: 16px; color: #333; 
+  }
+
+  .reviews { 
+    width: 80%;
+  } 
+
+  .reviews h2 { 
+    font-size: 28px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+  } 
+
+  .reviews ul li { 
+    font-size: 16px; 
+    margin: 10px 0; 
+    color: #333; 
+  }
 }
