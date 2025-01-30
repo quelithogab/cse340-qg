@@ -66,5 +66,33 @@ Util.buildClassificationGrid = async function(data){
       grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
     }
     return grid
+}
+
+
+/* *********************************
+ * Build the vehicle detail view 
+ * ******************************* */
+Util.buildVehicleDetail =  async function(vehicle) {
+  let detail = ""
+  if(vehicle) {
+    detail = '<div class="vehicle-detail">'
+    detail += '<img src="' + vehicle.inv_image 
+    + '" alt="Image of ' + vehicle.inv_make + ' ' + vehicle.inv_model 
+    + ' on CSE Motors" />'
+    detail += '<div class="vehicle-info">'
+    detail += '<h2>' + vehicle.inv_make + ' ' + vehicle.inv_model + '</h2>'
+    detail += '<p>Price: $' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</p>'
+    detail += '<p>Description: ' + vehicle.inv_description + '</p>'
+    detail += '<p>Color: ' + vehicle.inv_color + '</p>'
+    detail += '<p>Mileage: ' + new Intl.NumberFormat('en-US').format(vehicle.inv_mileage) + ' miles</p>'
+    detail += '<p>Year: ' + vehicle.inv_year + '</p>'
+    detail += '</div>'
+    detail += '</div>'
+  } else {
+    detail += '<p class="notice">Sorry, no vehicle information is available.</p>'
   }
+  return detail
+}
+
+module.exports = Util
 

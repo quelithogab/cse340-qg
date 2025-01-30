@@ -24,5 +24,23 @@ async function getClassifications(){
       console.error("getclassificationsbyid error " + error)
     }
   }
-  
-  module.exports = {getClassifications, getInventoryByClassificationId};
+
+  /* ***************************
+ *  Retrieve data for a specific vehicle by inventory ID
+ * ************************** */
+async function getInventoryByDetail(inventory_id) {
+  try {
+    const data = await db.query(
+      `SELECT * FROM public.inventory AS i 
+       JOIN public.classification AS c 
+       ON i.classification_id = c.classification_id 
+       WHERE i.inventory_id = $1`,
+      [inventory_id]
+    )
+    return data.rows[0]
+  } catch (error) {
+    console.error("getInventoryByDetail error " + error)
+  }
+}
+
+module.exports = {getClassifications, getInventoryByClassificationId, getInventoryByDetail};
