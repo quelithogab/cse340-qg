@@ -72,7 +72,7 @@ Util.buildClassificationGrid = async function(data){
 /* *********************************
  * Build the vehicle detail view 
  * ******************************* */
-Util.buildVehicleDetail =  async function(vehicle) {
+Util.buildItemDetails =  async function(vehicle) {
   let detail = ""
   if(vehicle) {
     detail = '<div class="vehicle-detail">'
