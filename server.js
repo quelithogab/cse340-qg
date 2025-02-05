@@ -47,7 +47,7 @@ app.use(async (req, res, next) => {
 app.use(utilities.handleErrors(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
-  if(err.status == 500){ message = err.message} else {message = 'Something went wrong! please try again later'}
+  if(err.status == 404){ message = err.message} else {message = 'Something went wrong! please try again later'}
   res.render("errors/error", {
     title: err.status || 'Server Error',
     message,
